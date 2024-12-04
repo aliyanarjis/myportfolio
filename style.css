@@ -69,10 +69,10 @@ line-height: 30px;
 margin-top: 20px;
 }
 .social-links {
-    margin-top : 15px;
     display: flex;
     flex-direction: row nowrap;
 }
+
 #header .social-links a {
     font-size: 16px;
     display: flex;
@@ -103,6 +103,11 @@ margin-top: 20px;
     font-size: 19px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+}
+.link-item.active a {
+    color: #12d640;
+    /* font-size: 22px; */
+    font-weight: 600;
 }
 a {
     color: #12d640;
@@ -749,12 +754,14 @@ section{
     color: #dee2e6;
     line-height: 1;
 }
-#header.header-top .container{
+#header.header-top .container.header{
+    justify-content: space-between;
+    gap: 20px;
     display: flex;
     align-items: center;
 }
 #header.header-top h1 {
-    margin-right: auto;
+    /* margin-right: auto; */
     font-size: 36px;
 }
 header h1 a, #header h1 a:hover {
@@ -763,29 +770,20 @@ header h1 a, #header h1 a:hover {
     line-height: 1;
     display: inline-block;
 }
+
 .container{
+    max-width: 1200px;
     margin: 0 auto;
-
-}
-#header.header-tops .container {
-    padding-top: 5px ;
-    padding-bottom: 0 ;
-    padding-left: 30px;
-    margin: 0 auto;
-    padding-right: 30px;
-    /* justify-content: space-between; */
-
 }
 #header.header-top .social-links{
     margin-left: 40px;
 }
 #header.header-tops h1 {
-    margin-top: 0px;
+    margin: 0px;
     padding: 0;
     line-height: 1;
     font-weight: 700;
     font-family: "Poppins", sans-serif;
-    margin-right: 40px;
 }
 a{
     text-decoration: none;
@@ -799,7 +797,6 @@ a{
 }
 
 .social-links {
-    margin-top : 15px;
     display: flex;
     flex-direction: row nowrap;
 }
@@ -878,13 +875,14 @@ a {
     left: 15px;
     z-index: 9999;
     overflow-y: auto;
-    background: rgba(0, 0, 0, 0.7);
+    background: #09203a;
     transition: ease-in-out 0s;
     opacity: 0;
     visibility: hidden;
     border-radius: 10px;
     padding: 10px 0;
-    border: 2px solid rgba(255, 255, 255, 0.12);
+    /* border: 2px solid rgba(255, 255, 255, 0.12); */
+    box-shadow: 0.5px 0.5px 9px #09203a;
     /* height: 100%; */
     /* top:8%; */
 }

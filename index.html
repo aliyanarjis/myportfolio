@@ -9,7 +9,7 @@
 </head>
 <body>
     <main id="header" class="header-tops home">
-        <div class="container">
+        <div class="container ">
 
             <button class="mobile-nav-toggle" type="button">
                 <span onclick="openNav()" class="slidenav">
@@ -19,13 +19,12 @@
                     <i class="fa-solid fa-xmark"></i>
                 </span>
             </button>
-            <div class="container">
+            <div class="container header">
                 <h1>
                     <span href="#">AliYa NarJis</span>           
                     </h1>
-                <h2 class="para">I'm 
-                    <span id="el" class="typing"></span>
-                    <span>|</span>
+                <h2 class="para">I'm a
+                    <span id="el" class="auto-typed"></span>
                 </h2>
                 <nav class= "nav-menu ">
                     
@@ -245,7 +244,7 @@
                     <div class="info-box">
                         <i class="fa-solid fa-share-nodes bx"></i>
                         <h3>Social Profiles</h3>
-                        <div class="social-links">
+                        <div class="social-links profile_social">
                             <a href="#">
                                 <i class="bx fa-brands fa-linkedin-in"></i>
                             </a>
@@ -279,7 +278,17 @@
 
     </section>
 
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
+
+        var typed = new Typed(".auto-typed", {
+            strings : ["Shopify expert", "Fullstack developer"],
+            typeSpeed : 150,
+            backSpeed : 150,
+            loop : true
+        });
+
+
         // navigation
         function closeNav () {
             document.querySelector(".mobile-nav").style.display = "none";
@@ -298,9 +307,11 @@
         }
         // sections
 
-        let navItems    = document.querySelectorAll('.link-item');
+        let navItems = document.querySelectorAll('.link-item');
         navItems.forEach(elm => {
             elm.addEventListener('click', function(e) {
+                navItems.forEach(elm => elm.classList.remove("active"))
+
                 document.querySelector('.para').classList.add('hide')
                 
                 document.querySelectorAll('.section-show').forEach(el => el.classList.remove('active'))
@@ -308,6 +319,7 @@
                 const parent  = e.target.closest('.link-item')
                 const parentId= parent.dataset.itemTitle
                 const contentContainer  = document.querySelector(`#${parentId}`)
+                elm.classList.add("active")
                 // document.getElementById(parentId).classList.add('clicked')
                 if(contentContainer){
 
@@ -324,6 +336,10 @@
 
             })
         })
+        navItems[0].click();
+
+            // let x = navItems(clicked)
+
        
       
 
